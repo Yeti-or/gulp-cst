@@ -1,0 +1,41 @@
+{
+  "name": "gulp-cst",
+  "version": "0.0.1",
+  "description": "CST for your gulp",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cst": "^0.3.0",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp-util": "^3.0.7",
+    "istanbul": "^0.4.2",
+    "jscs": "^3.0.3",
+    "jshint": "^2.9.1",
+    "mocha": "^2.5.2"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run specs",
+    "specs": "mocha test",
+    "lint": "jshint . && jscs .",
+    "cover": "istanbul cover _mocha -- test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeti-or/gulp-cst.git"
+  },
+  "keywords": [
+    "gulp",
+    "cst"
+  ],
+  "author": "Vasiliy Loginevskiy <yeti.or@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yeti-or/gulp-cst/issues"
+  },
+  "homepage": "https://github.com/yeti-or/gulp-cst#readme"
+}
