@@ -1,6 +1,6 @@
 {
   "name": "gulp-cst",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "CST for your gulp",
   "main": "index.js",
   "directories": {
