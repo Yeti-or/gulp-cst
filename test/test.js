@@ -37,3 +37,20 @@ it('should parse simple expression with CST tokens', function(done) {
 
     stream.end();
 });
+
+it('should not throw on error', function(done) {
+    var stream = gulpCST();
+
+    stream.on('data', function(file) {
+        expect(file.error).not.to.be.null;
+        expect(file.tree).to.be.undefined;
+    })
+    .on('end', done);
+
+    stream.write(new gulpUtil.File({
+        path: 'file.js',
+        contents: new Buffer('(42:42})')
+    }));
+
+    stream.end();
+});
