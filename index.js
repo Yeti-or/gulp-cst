@@ -5,7 +5,11 @@ module.exports = function(options) {
     var parser = new Parser(options);
     return through.obj(function(file, enc, next) {
         var fileContent = file.contents.toString(enc);
-        file.tree = parser.parse(fileContent);
+        try {
+            file.tree = parser.parse(fileContent);
+        } catch (err) {
+            file.error = err;
+        }
         next(null, file);
     });
 };
